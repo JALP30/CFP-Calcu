@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      CFP CALCULATOR
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-item>
+    <ion-label color="dark"> Sex: </ion-label>
+    <ion-select interface="popover" [(ngModel)]="sex">
+      <ion-option value="male">Male</ion-option>
+      <ion-option value="female">Female</ion-option>
+    </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label color="dark">Height: </ion-label>
+  <ion-input [(ngModel)]="height"></ion-input>
+  </ion-item>
+
+<ion-item>
+<ion-label>Feet </ion-label>
+  <ion-input type="number" [(ngModel)]="feet"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Inches </ion-label>
+  <ion-input type="number" [(ngModel)]="inches"></ion-input>
+</ion-item>
+
+<button ion-button color="secondary" (click)="CalculateIBW ()">CALCULATE</button>
+
+<ion-item *ngIf="Robinson">
+  <h2>Ideal weight according to: {{Robinson}} <code> ({{IWRob}})</code> </h2>
+</ion-item>
+
+</ion-content>
