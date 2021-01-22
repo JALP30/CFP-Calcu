@@ -1,40 +1,47 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      CFP CALCULATOR
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content padding>
+  <h2> CFP Ideal Weight Calculator</h2>
+ 
+  <h2> </h2>
+
+ <h3>
+    Sex:
+  </h3>
 
 <ion-item>
-    <ion-label color="dark"> Sex: </ion-label>
-    <ion-select interface="popover" [(ngModel)]="sex">
-      <ion-option value="male">Male</ion-option>
-      <ion-option value="female">Female</ion-option>
-    </ion-select>
-</ion-item>
+  <ion-label> Sex: </ion-label>
+   <ion-select interface = "popover" [(ngModel)]='sex'>
+    <ion-option value = 'male'>Male</ion-option>
+    <ion-option value = 'female'>Female</ion-option>
+   </ion-select>  
+</ion-item>  
+
+  <h3>
+    Height:
+  </h3>
 
 <ion-item>
-  <ion-label color="dark">Height: </ion-label>
-  <ion-input [(ngModel)]="height"></ion-input>
-  </ion-item>
-
-<ion-item>
-<ion-label>Feet </ion-label>
+  <ion-label> In Feet: </ion-label>
   <ion-input type="number" [(ngModel)]="feet"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Inches </ion-label>
+  <ion-label>In Inches: </ion-label>
   <ion-input type="number" [(ngModel)]="inches"></ion-input>
 </ion-item>
 
-<button ion-button color="secondary" (click)="CalculateIBW ()">CALCULATE</button>
 
-<ion-item *ngIf="Robinson">
-  <h2>Ideal weight according to: {{Robinson}} <code> ({{IWRob}})</code> </h2>
+
+<button ion-button color="secondary" (click)="calculateIWC()" > 
+  Calculate 
+</button>
+
+<ion-item *ngIf='iwrobinson'>
+  <h4>Your Ideal Weight according to: </h4>
+  <h4>Robinson (1983): {{iwrobinson}} kg</h4>
+  <h4>Miller (1983): {{iwmiller}} kg</h4>
+  <h4>Hamwi (1974): {{iwhamwi}} kg</h4>
+  <h4>Devine (1964): {{iwdevine}} kg</h4>
 </ion-item>
 
 </ion-content>
